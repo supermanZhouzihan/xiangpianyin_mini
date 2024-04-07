@@ -14,7 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getImgInfo();
+    if (options.openId&&options.batchId) {
+      this.setData({
+        openId: options.openId,
+        batchId:options.batchId
+      })
+      this.getImgInfo();
+    }
+
   },
 
   /**
@@ -34,18 +41,18 @@ Page({
   //获取图片信息
   getImgInfo() {
     let params = {
-      openId: 'test001',
-      batchId: '1776497847958200320'
+      openId: this.data.batchId,
+      batchId: this.data.batchId
     }
     $api.getPhotoInfo(params).then((res) => {
-      console.log('res', res)
-      let list=[];
-     for(let i=0;i<10;i++){
-       list.push(res.data.data[0])
-     }
+      //   console.log('res', res)
+      //   let list=[];
+      //  for(let i=0;i<10;i++){
+      //    list.push(res.data.data[0])
+      //  }
       this.setData({
         // ["imgInfo.src"]: res.data.data
-        imgUrlList: list
+        imgUrlList: res.data.data
       })
     }).catch((err) => {
       console.log(err)
@@ -53,7 +60,7 @@ Page({
   },
 
   shareImage: function (e) {
-    console.log(e,e.target.dataset.imgUrl)
+    console.log(e, e.target.dataset.imgUrl)
     wx.showActionSheet({
       itemList: ['保存', '发送给朋友', '分享到朋友圈'],
       success: function (res) {
@@ -64,25 +71,25 @@ Page({
               header: {
                 'content-type': 'image/png' // 指定文件类型为JPEG图片
               },
-              url: e.target.dataset.imgurl||e.currentTarget.dataset.imgurl,
-              success: function(res) {
-                console.log('res222',res)
+              url: e.target.dataset.imgurl || e.currentTarget.dataset.imgurl,
+              success: function (res) {
+                console.log('res222', res)
                 wx.saveImageToPhotosAlbum({
                   filePath: res.tempFilePath,
-                  success: function() {
+                  success: function () {
                     console.log('保存成功');
                   },
-                  fail: function(err) {
+                  fail: function (err) {
                     console.log('保存失败', err);
                   }
                 });
               },
-              fail: function(err) {
+              fail: function (err) {
                 console.log('下载失败', err);
               }
             });
-            
-            
+
+
 
 
 
