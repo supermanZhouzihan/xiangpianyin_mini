@@ -1,0 +1,6 @@
+<!--pages/showPhoto.wxml-->
+<scroll-view class="scrollarea pageView" scroll-y type="list">
+  <view class="container" wx:for="{{imgUrlList}}" 	bind:longtap="shareImage" data-imgUrl="{{imgUrl}}" mode="aspectFit" wx:for-item="imgUrl" wx:key="index">
+     <image src="{{imgUrl}}" alt=""/>
+  </view>
+</scroll-view>

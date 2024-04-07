@@ -1,0 +1,7 @@
+{
+  "component": true,
+    "navigationBarTitleText": "查看照片",
+    "usingComponents": {
+
+    }
+}
