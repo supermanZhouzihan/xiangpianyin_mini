@@ -62,7 +62,7 @@ Page({
   shareImage: function (e) {
     console.log(e, e.target.dataset.imgUrl)
     wx.showActionSheet({
-      itemList: ['保存', '发送给朋友', '分享到朋友圈'],
+      itemList: ['保存'],
       success: function (res) {
         if (!res.cancel) {
           if (res.tapIndex === 0) {
