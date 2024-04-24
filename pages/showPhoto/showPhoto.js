@@ -14,12 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if (options.openId&&options.batchId) {
+    if (options.openId && options.batchId) {
       this.setData({
         openId: options.openId,
-        batchId:options.batchId
+        batchId: options.batchId
       })
       this.getImgInfo();
+    } else {
+      this.setData({
+        // ["imgInfo.src"]: res.data.data
+        imgUrlList: ['https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783127305578237953.png?x-oss-process=image/resize,m_lfit,w_800', 'https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783128489013694465.png?x-oss-process=image/resize,m_lfit,w_800', 'https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783128721898229761.png?x-oss-process=image/resize,m_lfit,w_800']
+      })
     }
 
   },
@@ -61,6 +66,7 @@ Page({
 
   shareImage: function (e) {
     console.log(e, e.target.dataset.imgUrl)
+    if (this.data.openId && this.data.batchId) {
     wx.showActionSheet({
       itemList: ['保存'],
       success: function (res) {
@@ -78,14 +84,29 @@ Page({
                   filePath: res.tempFilePath,
                   success: function () {
                     console.log('保存成功');
+                    wx.showToast({
+                      title: '保存成功',
+                      icon: 'none',
+                      duration: 3000
+                    })
                   },
                   fail: function (err) {
                     console.log('保存失败', err);
+                    wx.showToast({
+                      title: '保存失败',
+                      icon: 'none',
+                      duration: 3000
+                    })
                   }
                 });
               },
               fail: function (err) {
                 console.log('下载失败', err);
+                wx.showToast({
+                  title: '下载失败',
+                  icon: 'none',
+                  duration: 3000
+                })
               }
             });
 
@@ -101,6 +122,16 @@ Page({
         }
       }
     });
+    }
+    else{
+      wx.showToast({
+        title: '请关注公众号 《相片印》 进行图片合成',
+        icon: 'none',
+        duration: 3000
+      })
+    }
+
+
   },
 
 
