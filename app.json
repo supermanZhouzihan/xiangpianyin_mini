@@ -2,8 +2,32 @@
   "pages": [
     "pages/showPhoto/showPhoto",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/center/center",
+    "pages/photos/photos"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/showPhoto/showPhoto",
+        "text": "首页",
+        "iconPath": "static/index.png",
+        "selectedIconPath": "static/indexActive.png"
+      },
+      {
+        "pagePath": "pages/photos/photos",
+        "text": "图集",
+        "iconPath": "static/photo.png",
+        "selectedIconPath": "static/photoActive.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "个人中心",
+        "iconPath": "static/center.png",
+        "selectedIconPath": "static/centerActive.png"
+      }
+    ]
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "Weixin",
