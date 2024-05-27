@@ -1,2 +1,5 @@
 <!--pages/center.wxml-->
-<text>pages/center.wxml</text>
+<view class="main">
+    <van-cell size="large" title="基本信息" is-link bindtap="goBaseInfo" />
+    <van-cell size="large" title="收款信息" is-link bindtap="goCollection" />
+</view>

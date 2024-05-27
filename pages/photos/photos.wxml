@@ -1,2 +1,12 @@
 <!--pages/photos/photos.wxml-->
-<text>pages/photos/photos.wxml</text>
+<view class="pageView">
+  <scroll-view class="scrollarea " scroll-y type="list">
+  <view style="display:flex;justify-content: space-between; flex-wrap: wrap;">
+    <view wx:for="{{imgUrlList}}" wx:key="index" wx:for-item="imgUrl" wx:key="index" style="width: 47%;margin-bottom:40rpx">
+      <image style="width: 100%;" src="{{imgUrl}}" mode="widthFix" height="100%" />
+    </view>
+    
+  </view>
+
+</scroll-view>
+</view>
