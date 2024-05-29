@@ -1,11 +1,11 @@
-// pages/center.js
+// pages/myPhoto/myPhoto.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgUrlList: ['https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783127305578237953.png?x-oss-process=image/resize,m_lfit,w_800', 'https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783128489013694465.png?x-oss-process=image/resize,m_lfit,w_800', 'https://shejiayu.oss-cn-chengdu.aliyuncs.com/app/1783128721898229761.png?x-oss-process=image/resize,m_lfit,w_800']
   },
 
   /**
@@ -27,32 +27,6 @@ Page({
    */
   onShow() {
 
-  },
-
-   //跳转到我的照片
-   goMyPhoto(){
-    wx.navigateTo({
-      url: '../myPhoto/myPhoto',
-    })
-  },
-  //跳转到历史更新
-  goHistoricalUpdate(){
-    Toast.fail('敬请期待');
-    // wx.navigateTo({
-    //   url: '../historicalUpdate/historicalUpdate',
-    // })
-  },
-  //跳转到售后
-  goAfterSale(){
-    wx.navigateTo({
-      url: '../afterSale/afterSale',
-    })
-  },
-  //跳转到设置
-  goConfig(){
-    wx.navigateTo({
-      url: '../settingPage/settingPage',
-    })
   },
 
   /**

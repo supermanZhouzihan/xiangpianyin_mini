@@ -8,6 +8,7 @@ Page({
    */
   data: {
     imgUrlList: [],
+    show: false,
   },
 
   /**
@@ -66,63 +67,62 @@ Page({
   shareImage: function (e) {
     console.log(e, e.target.dataset.imgUrl)
     if (this.data.openId && this.data.batchId) {
-    wx.showActionSheet({
-      itemList: ['保存'],
-      success: function (res) {
-        if (!res.cancel) {
-          if (res.tapIndex === 0) {
-            // 保存到本地
-            wx.downloadFile({
-              header: {
-                'content-type': 'image/png' // 指定文件类型为JPEG图片
-              },
-              url: e.target.dataset.imgurl || e.currentTarget.dataset.imgurl,
-              success: function (res) {
-                console.log('res222', res)
-                wx.saveImageToPhotosAlbum({
-                  filePath: res.tempFilePath,
-                  success: function () {
-                    console.log('保存成功');
-                    wx.showToast({
-                      title: '保存成功',
-                      icon: 'none',
-                      duration: 3000
-                    })
-                  },
-                  fail: function (err) {
-                    console.log('保存失败', err);
-                    wx.showToast({
-                      title: '保存失败',
-                      icon: 'none',
-                      duration: 3000
-                    })
-                  }
-                });
-              },
-              fail: function (err) {
-                console.log('下载失败', err);
-                wx.showToast({
-                  title: '下载失败',
-                  icon: 'none',
-                  duration: 3000
-                })
-              }
-            });
+      wx.showActionSheet({
+        itemList: ['保存'],
+        success: function (res) {
+          if (!res.cancel) {
+            if (res.tapIndex === 0) {
+              // 保存到本地
+              wx.downloadFile({
+                header: {
+                  'content-type': 'image/png' // 指定文件类型为JPEG图片
+                },
+                url: e.target.dataset.imgurl || e.currentTarget.dataset.imgurl,
+                success: function (res) {
+                  console.log('res222', res)
+                  wx.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath,
+                    success: function () {
+                      console.log('保存成功');
+                      wx.showToast({
+                        title: '保存成功',
+                        icon: 'none',
+                        duration: 3000
+                      })
+                    },
+                    fail: function (err) {
+                      console.log('保存失败', err);
+                      wx.showToast({
+                        title: '保存失败',
+                        icon: 'none',
+                        duration: 3000
+                      })
+                    }
+                  });
+                },
+                fail: function (err) {
+                  console.log('下载失败', err);
+                  wx.showToast({
+                    title: '下载失败',
+                    icon: 'none',
+                    duration: 3000
+                  })
+                }
+              });
 
 
 
 
 
-          } else if (res.tapIndex === 1) {
-            //发送给朋友
-          } else if (res.tapIndex == 2) {
-            // 分享到朋友圈
+            } else if (res.tapIndex === 1) {
+              //发送给朋友
+            } else if (res.tapIndex == 2) {
+              // 分享到朋友圈
+            }
           }
         }
-      }
-    });
-    }
-    else{
+      });
+    } else {
       wx.showToast({
         title: '请关注公众号 《相片印》 进行图片合成',
         icon: 'none',
@@ -169,6 +169,17 @@ Page({
     }
     $api.updateOpenId(params).then((res) => {
       // nothing to do
+    })
+  },
+  onClose() {
+    this.setData({
+      // ["imgInfo.src"]: res.data.data
+      show: false
+    })
+  },
+  uploadPhoto(){
+    this.setData({
+      show:true
     })
   },
 })

@@ -1,4 +1,4 @@
-// pages/center.js
+// pages/settingPage/settingPage.js
 Page({
 
   /**
@@ -27,32 +27,6 @@ Page({
    */
   onShow() {
 
-  },
-
-   //跳转到我的照片
-   goMyPhoto(){
-    wx.navigateTo({
-      url: '../myPhoto/myPhoto',
-    })
-  },
-  //跳转到历史更新
-  goHistoricalUpdate(){
-    Toast.fail('敬请期待');
-    // wx.navigateTo({
-    //   url: '../historicalUpdate/historicalUpdate',
-    // })
-  },
-  //跳转到售后
-  goAfterSale(){
-    wx.navigateTo({
-      url: '../afterSale/afterSale',
-    })
-  },
-  //跳转到设置
-  goConfig(){
-    wx.navigateTo({
-      url: '../settingPage/settingPage',
-    })
   },
 
   /**

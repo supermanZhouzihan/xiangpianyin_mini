@@ -4,7 +4,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/center/center",
-    "pages/photos/photos"
+    "pages/photos/photos",
+    "pages/settingPage/settingPage",
+    "pages/myPhoto/myPhoto",
+    "pages/historicalUpdate/historicalUpdate",
+    "pages/afterSale/afterSale"
   ],
   "tabBar": {
     "list": [
@@ -56,6 +60,7 @@
     "van-checkbox": "@vant/weapp/checkbox/index",
     "van-uploader": "@vant/weapp/uploader/index",
     "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
-}
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-button": "@vant/weapp/button/index"
+  }
 }

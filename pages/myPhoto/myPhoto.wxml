@@ -1,4 +1,4 @@
-<!--pages/photos/photos.wxml-->
+<!--pages/myPhoto/myPhoto.wxml-->
 <view class="pageView">
   <scroll-view class="scrollarea " scroll-y type="list">
     <view style="display:flex;justify-content: space-between; flex-wrap: wrap;">

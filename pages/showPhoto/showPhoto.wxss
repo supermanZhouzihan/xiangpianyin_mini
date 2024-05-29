@@ -74,3 +74,28 @@ page {
 .nickname-input {
   flex: 1;
 }
+
+.searchBtn{
+  width: 80%;
+  margin: 10rpx auto 0;
+  text-align: center;
+}
+.cuspopup{
+  width: 80%;
+  padding:60rpx;
+  
+}
+.cuspopup>view:not(:last-child) {
+   margin-bottom: 40rpx;
+}
+.cuspopup>view.info{
+  font-size: 26rpx;
+}
+.confirmBtn{
+  width: 80%;
+  margin: 10rpx auto 0;
+  text-align: center;
+  background-color: gray;
+  color: #fff;
+}
+

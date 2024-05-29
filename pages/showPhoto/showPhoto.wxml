@@ -1,6 +1,23 @@
 <!--pages/showPhoto.wxml-->
 <scroll-view class="scrollarea pageView" scroll-y type="list">
-  <view class="container" wx:for="{{imgUrlList}}" 	bind:longtap="shareImage" data-imgUrl="{{imgUrl}}" mode="aspectFit" wx:for-item="imgUrl" wx:key="index">
-     <image src="{{imgUrl}}" alt=""/>
+  <view style="text-align: center;">
+    <van-button custom-class="searchBtn" type="default" round bindtap="uploadPhoto">
+      上传照片
+    </van-button>
   </view>
+
+  <view class="container" wx:for="{{imgUrlList}}" bindtap="uploadPhoto" data-imgUrl="{{imgUrl}}" mode="aspectFit" wx:for-item="imgUrl" wx:key="index">
+    <image src="{{imgUrl}}" alt="" />
+  </view>
+  <van-popup show="{{ show }}" bind:close="onClose" custom-class="cuspopup">
+    <view class="text-center">温馨提示</view>
+    <view class="info text-center">
+      请在相片印公众号上传照片进行合成
+    </view>
+    <view class="text-center">
+      <van-button bindtap="onClose" color="gray" custom-class="confirmBtn">
+        确定</van-button>
+    </view>
+  </van-popup>
+
 </scroll-view>

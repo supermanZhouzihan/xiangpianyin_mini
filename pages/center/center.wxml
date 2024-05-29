@@ -1,5 +1,7 @@
 <!--pages/center.wxml-->
 <view class="main">
-    <van-cell size="large" title="基本信息" is-link bindtap="goBaseInfo" />
-    <van-cell size="large" title="收款信息" is-link bindtap="goCollection" />
+    <van-cell size="large" title="我的照片" is-link bindtap="goMyPhoto" icon="photo-o" />
+    <van-cell size="large" title="历史更新" is-link bindtap="goHistoricalUpdate" icon="eye-o" />
+    <van-cell size="large" title="售后" is-link bindtap="goAfterSale" icon="bookmark-o" />
+    <!-- <van-cell size="large" title="设置" is-link bindtap="goConfig" icon="setting-o" /> -->
 </view>

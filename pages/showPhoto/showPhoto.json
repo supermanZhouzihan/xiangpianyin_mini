@@ -1,6 +1,6 @@
 {
   "component": true,
-    "navigationBarTitleText": "查看照片",
+    "navigationBarTitleText": "首页",
     "usingComponents": {
 
     }
