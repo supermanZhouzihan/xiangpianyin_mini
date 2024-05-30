@@ -1,1 +1,57 @@
 /* pages/center.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.topInfo{
+  width: 100%;
+  height: 30%;
+  background:linear-gradient(rgba(242, 151, 99, 1),rgba(255, 219, 171, 1)) ;
+  position: relative;
+}
+.back{
+  background-color: #fff;
+  width: 92%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px 5px 0 0;
+}
+.circle-container {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%; /* 将容器设置为圆形 */
+  overflow: hidden; /* 隐藏超出圆形容器的部分 */
+  position: relative; /* 使图片相对于容器定位 */
+  left: 15%;
+  top: -10px;
+}
+.avatar {
+  display: block;
+  width:56px;
+  height: 56px;
+}
+.circle-img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; 图片填充整个容器 */
+}
+.cellList{
+  clear: both;
+}
+.nickName{
+  position: absolute;
+  top: 10px;
+  left :40%;
+}
+.cusicon{
+  position: absolute;
+  top: 14px;
+  right :10%;
+}

@@ -1,18 +1,27 @@
 // pages/center.js
-Page({
+import Toast from "@vant/weapp/toast/toast" ;
 
+const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+Page({
+  
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {
+      avatarUrl: defaultAvatarUrl,
+      nickName: '',
+    },
+    hasUserInfo: false,
+    canIUseGetUserProfile: wx.canIUse('getUserProfile'),
+    canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    
   },
 
   /**
@@ -27,6 +36,11 @@ Page({
    */
   onShow() {
 
+  },
+  goIndex(){
+    wx.navigateTo({
+      url: '../index/index',
+    })
   },
 
    //跳转到我的照片
@@ -44,9 +58,10 @@ Page({
   },
   //跳转到售后
   goAfterSale(){
-    wx.navigateTo({
-      url: '../afterSale/afterSale',
-    })
+    Toast.fail('敬请期待');
+    // wx.navigateTo({
+    //   url: '../afterSale/afterSale',
+    // })
   },
   //跳转到设置
   goConfig(){

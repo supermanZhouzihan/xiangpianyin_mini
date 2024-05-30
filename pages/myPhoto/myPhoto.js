@@ -28,6 +28,15 @@ Page({
   onShow() {
 
   },
+  perviewImage(e){
+     console.log(e)
+     let url=e.target.dataset.url;
+     wx.previewImage({
+      current: url,
+      showmenu:true,
+      urls: this.data.imgUrlList
+    })
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

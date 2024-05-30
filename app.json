@@ -11,6 +11,7 @@
     "pages/afterSale/afterSale"
   ],
   "tabBar": {
+    "selectedColor": "#d81e06",
     "list": [
       {
         "pagePath": "pages/showPhoto/showPhoto",
@@ -61,6 +62,7 @@
     "van-uploader": "@vant/weapp/uploader/index",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index"
   }
 }
