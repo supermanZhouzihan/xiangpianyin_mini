@@ -56,6 +56,9 @@ Page({
     //   url: '../historicalUpdate/historicalUpdate',
     // })
   },
+  goVip(){
+    Toast.fail('敬请期待');
+  },
   //跳转到售后
   goAfterSale(){
     Toast.fail('敬请期待');
